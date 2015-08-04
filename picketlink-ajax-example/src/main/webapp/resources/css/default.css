@@ -1,0 +1,15 @@
+body,
+.ui-widget {
+    font-family: Meiryo;
+    font-size: 12px;
+}
+
+a:link,
+a:visited {
+    color: #337ab7;
+}
+
+a:hover,
+a:active {
+    color: #23527c;
+}

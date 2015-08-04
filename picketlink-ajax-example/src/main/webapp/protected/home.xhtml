@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui">
+    <f:view transient="true">
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <title><h:outputText value="#{msg['home.title']}"/></title>
+            <h:outputStylesheet library="css" name="default.css"/>
+        </h:head>
+        <h:body>
+            <p>
+                <h:outputText value="#{msg['home.title']}"/>
+            </p>
+            <div style="height: 10px;"></div>
+            <h:form>
+                <h:outputText value="#{msg['home.currentDateTime']}"/><br/>
+                <h:outputText id="currentDateTime" value="#{homeView.currentDateTime}">
+                    <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss"/>
+                </h:outputText>
+                <div style="height: 10px;"></div>
+                <p:commandButton value="#{msg['home.updateDateTime']}"
+                        actionListener="#{homeView.updateDateTime()}" update="currentDateTime"/>
+            </h:form>
+                <div style="height: 30px;"></div>
+            <h:form>
+                <p:commandButton value="#{msg['home.logout']}" action="#{homeView.logout()}"/>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

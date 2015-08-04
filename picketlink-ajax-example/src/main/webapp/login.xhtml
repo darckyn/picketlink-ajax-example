@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui">
+    <f:view transient="true">
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <title><h:outputText value="#{msg['login.title']}"/></title>
+            <h:outputStylesheet library="css" name="default.css"/>
+        </h:head>
+        <h:body>
+            <h:outputText value="#{msg['login.title']}"/>
+            <div style="height: 10px;"></div>
+            <h:form>
+                <p:messages id="msg"/>
+                <p:panelGrid columns="2" styleClass="ui-noborder">
+                    <h:outputText value="#{msg['login.username']}"/>
+                    <p:inputText value="#{loginCredentials.userId}"/>
+                    <h:outputText value="#{msg['login.password']}"/>
+                    <p:password value="#{loginCredentials.password}"/>
+                </p:panelGrid>
+                <div style="height: 10px;"></div>
+                <p:commandButton value="#{msg['login.login']}" action="#{loginView.login()}" update="msg"/>
+            </h:form>
+            <p>
+                <h:outputText value="#{msg['login.tip']}"/>
+            </p>
+        </h:body>
+    </f:view>
+</html>
