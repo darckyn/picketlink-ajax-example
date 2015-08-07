@@ -18,7 +18,7 @@ public class FormWithAjaxAuthenticationScheme implements
 		HttpAuthenticationScheme<CustomAuthenticationConfiguration> {
 
 	/**
-	 * The login page URL.
+	 * The timeout page URL.
 	 */
 	private static final String TIMEOUT_PAGE_URL = "/timeout.xhtml";
 
